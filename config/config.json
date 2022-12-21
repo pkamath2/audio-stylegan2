@@ -1,0 +1,15 @@
+{
+    "stft_channels": 512,
+    "n_frames": 256,
+    "hop_size": 128,
+    "sample_rate": 16000,
+    "batch_size": 16,
+    "z_dim": 128,
+    "w_dim": 128,
+    "num_mapping_layers": 4,
+    "total_kimg": 25000,
+    "learning_rate": 0.0025,
+    "ema_rampup": 0.05,
+    "image_snapshot_ticks":50,
+    "network_snapshot_ticks":50
+}

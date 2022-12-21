@@ -77,22 +77,6 @@ def train(config, random_seed):
         }
     }
     G = Generator(**G_kwargs).requires_grad_(False).to(device) # subclass of torch.nn.Module
-    # G = Generator(z_dim=config['z_dim'],
-    #                 c_dim=0, #TODO: Labels: training_dataset.label_dim
-    #                 w_dim=config['w_dim'],
-    #                 img_resolution=training_dataset.resolution,
-    #                 img_channels=1,
-    #                 mapping_kwargs={
-    #                     'num_layers': config['num_mapping_layers'],
-    #                 },
-    #                 synthesis_kwargs={
-    #                     'channel_base': int(fmaps * 32768), #Factor to control number of feature maps for each layer.
-    #                     'channel_max': 512, #Maximum number of feature maps in each layer.
-    #                     'num_fp16_res': 4,# enable mixed-precision training
-    #                     'conv_clamp': 256,# clamp activations to avoid float16 overflow
-    #                     'fp16_channels_last':True
-    #                 }
-    #             ).train().requires_grad_(False).to(device) # subclass of torch.nn.Module
     
     D_kwargs = {
             'c_dim':0, #TODO: Labels
@@ -110,20 +94,6 @@ def train(config, random_seed):
             'mapping_kwargs':{}
     }
     D = Discriminator(**D_kwargs).train().requires_grad_(False).to(device)
-    # D = Discriminator(c_dim=0, #TODO: Labels
-    #                     img_resolution=training_dataset.resolution,
-    #                     img_channels=1,
-    #                     architecture='resnet', #We use the default config. Generator in skip mode and Discriminator in Residual
-    #                     channel_base=int(fmaps * 32768), #Factor to control number of feature maps for each layer.
-    #                     channel_max=512, #Maximum number of feature maps in each layer.
-    #                     num_fp16_res=4,# enable mixed-precision training
-    #                     conv_clamp=256,# clamp activations to avoid float16 overflow
-    #                     epilogue_kwargs={
-    #                         'mbstd_group_size': min(config['batch_size'], 4)
-    #                     },
-    #                     block_kwargs={},
-    #                     mapping_kwargs={}
-    #             ).train().requires_grad_(False).to(device)
     
     config['ema_kimg'] = config['batch_size'] * 10/32
     G_ema = copy.deepcopy(G).eval()

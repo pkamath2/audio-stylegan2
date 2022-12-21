@@ -10,14 +10,14 @@ import torch
 from torchsummary import summary
 
 sys.path.insert(0, '../')
-from dataset.dataset import AudioDataset
+from training.dataset import AudioDataset
 from util import util
 import dnnlib
 from torch_utils import misc
 from torch_utils import training_stats
 from torch_utils.ops import conv2d_gradfix
 from torch_utils.ops import grid_sample_gradfix
-from network.networks import Generator, Discriminator
+from training.networks import Generator, Discriminator
 from training.loss import StyleGAN2Loss
 from metrics import metric_main
 

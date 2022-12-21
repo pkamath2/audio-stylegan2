@@ -17,7 +17,7 @@ import torch
 
 import sys
 sys.path.insert(0, '../')
-from dataset.dataset import AudioDataset
+from training.dataset import AudioDataset
 import dnnlib
 
 #----------------------------------------------------------------------------

@@ -68,7 +68,7 @@ class AudioDataset(torch.utils.data.Dataset):
 
             # Shape here is 1 X 257 X 256
             ### WHOA! What!!!! - Did this to get the Spectrogram to 1X256 X 256   
-            # y = y[:,:256,:] 
+            y = y[:,:256,:] 
             # Shape here is 1 X 256 X 256
 
         return y

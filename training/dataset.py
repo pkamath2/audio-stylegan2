@@ -65,11 +65,7 @@ class AudioDataset(torch.utils.data.Dataset):
             y = self._pghi_stft(y, use_truncated_window=True)
             y = util.renormalize(y, (-50, 0), (0, 255)) # rescale to 0-255 like RGB images
             y = y.astype(np.uint8)
-
-            # Shape here is 1 X 257 X 256
-            ### WHOA! What!!!! - Did this to get the Spectrogram to 1X256 X 256   
-            y = y[:,:256,:] 
-            # Shape here is 1 X 256 X 256
+            y = y[:,:self._n_frames,:] 
 
         return y
 

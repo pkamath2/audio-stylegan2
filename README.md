@@ -26,13 +26,13 @@ python main.py --data_dir=<data location> --out_dir=training-runs/<checkpoint lo
 ```
 
 ## Notebooks
-Notebooks outline how to generate randomly from trained GAN. Further, we use Phase Gradient Heap Integration (PGHI) method to invert Spectrograms to audio. See (this)[https://ieeexplore.ieee.org/abstract/document/7890450/] paper and (this)[https://arxiv.org/pdf/2103.07390.pdf] paper for details. StyleGAN architectures for audio learn spectrogram representations as images and thus need to be scaled from [0,255] to [-50,0].
+Notebooks outline how to generate randomly from trained GAN. Further, we use Phase Gradient Heap Integration (PGHI) method to invert Spectrograms to audio. See [this](https://ieeexplore.ieee.org/abstract/document/7890450/) paper and [this](https://arxiv.org/pdf/2103.07390.pdf) paper for details. StyleGAN architectures for audio learn spectrogram representations as images and thus need to be scaled from [0,255] to [-50,0].
 
 * [Random generation](notebooks/generate.ipynb)
 
 
 ## Semantic Factorization
-We use the SeFa algorithm from (this)[https://genforce.github.io/sefa/] paper to automatically find directions for controllability. 
+We use the SeFa algorithm from [this](https://genforce.github.io/sefa/) paper to automatically find directions for controllability. 
 
 TODO: Add the notebook and streamlit interface
 

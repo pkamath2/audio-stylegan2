@@ -3,7 +3,8 @@
 This forked repository has updates for modelling Audio Textures. Please see the original official README from NVIDIA [here](https://github.com/NVlabs/stylegan2-ada-pytorch) for details on licenses and citations.
 
 ## Compatibility
-Note: This version of StyleGAN2 is not compatible with PyTorch>1.8. We use PyTorch 1.7 for all experiments.
+Note: This version of StyleGAN2 is not compatible with PyTorch>1.8. We use PyTorch 1.7 for all experiments. 
+
 
 ## Setup
 * Clone this repo
